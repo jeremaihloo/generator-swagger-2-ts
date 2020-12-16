@@ -164,9 +164,10 @@ var getViewForSwagger2 = function (opts, type) {
       if (op.tags) {
         _.each(op.tags, function (tag) {
           var name = getClassName(tag);
-          if (tags[name]) {
+          // Fix gen for AspNetCore
+          // if (tags[name]) {
             method.group = name;
-          }
+          // }
         });
       }
 
